@@ -5,6 +5,8 @@ const express= require("express");
 const path = require('path');
 const app= express();
 
+const user= require("./model/user.js");
+
 const mongoURI = 'mongodb+srv://admin:admin@cluster0.zcypud8.mongodb.net/reactfrom?retryWrites=true&w=majority';
 mongo.connect(mongoURI ,{
   useNewUrlParser: true, 
@@ -23,8 +25,6 @@ app.get("/",(req,res)=>{
 
 res.send("hello")
 })
-const user= require("./model/user.js");
-const bodyParser = require("body-parser");
 const data= new user({
  name:"sahil",
     email:"goyat@g.com",
